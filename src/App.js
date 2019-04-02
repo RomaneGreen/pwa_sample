@@ -14,19 +14,19 @@ class App extends Component {
 }
   onRouteChange = (route) => {
 
-
-      if(route === 'page1') {
-        this.setState({route: route})
-      } else if (route === 'page2') {
-        import('./components/Page2').then((Page2) => {
-          console.log(Page2)
-          this.setState({route: route, component: Page2.default}) 
-        })  
-         } else if (route === 'page3') {
-        import('./components/Page3').then((Page3) => {
-          this.setState({ route: route, component: Page3.default})
-        })
-        }
+      this.setState({route: route})
+      // if(route === 'page1') {
+      //   this.setState({route: route})
+      // } else if (route === 'page2') {
+      //   import('./components/Page2').then((Page2) => {
+      //     console.log(Page2)
+      //     this.setState({route: route, component: Page2.default}) 
+      //   })  
+      //    } else if (route === 'page3') {
+      //   import('./components/Page3').then((Page3) => {
+      //     this.setState({ route: route, component: Page3.default})
+      //   })
+      //   }
   
   }
 
@@ -40,7 +40,7 @@ class App extends Component {
 
       } else if(this.state.route === 'page3') {
         const AsyncPage3 = AsyncComponent(()=> import('./components/Page3'))
-        return <AsyncPage3 onRouteChange={this.state.onRouteChange} />
+        return <AsyncPage3 onRouteChange={this.onRouteChange} />
     }
 }
 }
