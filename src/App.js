@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import Page1 from './components/Page1'
 class App extends Component {
   constructor() {
     super() 
@@ -8,7 +8,7 @@ class App extends Component {
         route: 'page1',
         component: ''
   }
-  }
+}
   onRouteChange = (route) => {
 
 
@@ -24,14 +24,15 @@ class App extends Component {
           this.setState({ route: route, component: Page3.default})
         })
         }
+  
   }
-    
+
   render() {
       
    if(this.state.route === 'page1'){
            return <Page1 onRouteChange={this.onRouteChange} />
-}else if {
-  return <this.state.Component onRouteChange={this.onRouteChange}
+}else  {
+  return <this.state.component onRouteChange={this.onRouteChange} />
 }
   
 }
